@@ -1,15 +1,3 @@
-
-# Table of Contents
-
-1.  [Workshop Outline](#orga004536)
-    1.  [Welcome and Overview](#org223bd63)
-2.  [Part 1: Setting Up the Base Implementation](#orga2515fe)
-3.  [Part 2: Adding Edge Dynamics](#orgae70a18)
-4.  [Part 3: Complex Analyses and Wrap-Up](#orgb01ce91)
-    1.  [Modeling Pitfalls [15 min]](#org3bdfe16)
-    2.  [Analysis of the Adaptive Model [15 min]](#orgc9c365f)
-5.  [Key Takeaways [15 min]](#org62df5e8)
-
 <div style="display: flex; align-items: center; justify-content: space-between;">
     <h1 style="margin: 0;">Summer School 2024 - Complex Adaptive Systems</h1>
     <img src="./figures/applied_complexity.png" style="margin-left: 20px; width: 15%;" alt="Applied Complexity">
@@ -33,14 +21,16 @@ Check out  the detailed schedule  below to see what  we have
 planned.  We  look  forward  to a  productive  and  engaging
 session with you!
 
+# Table of Contents
 
-<a id="orga004536"></a>
-
-# Workshop Outline
-
+1.  [Part 1: Setting Up the Base Implementation](#orga2515fe)
+2.  [Part 2: Adding Edge Dynamics](#orgae70a18)
+3.  [Part 3: Complex Analyses and Wrap-Up](#orgb01ce91)
+    1.  [Modeling Pitfalls [15 min]](#org3bdfe16)
+    2.  [Analysis of the Adaptive Model [15 min]](#orgc9c365f)
+4.  [Key Takeaways [15 min]](#org62df5e8)
 
 <a id="org223bd63"></a>
-
 ## Welcome and Overview
 
 -   Greeting: Welcome to the workshop! We’re excited to dive into the SIR model with edge dynamics together.

@@ -1,6 +1,6 @@
 # Instructions for implementing edge dynamics in the SIR model using Mesa
 
-## Exercuse: Improving Our Infection Spreading Model
+## Exercise: Improving Our Infection Spreading Model
 ### Setup
 
 1. **Import necessary modules (including your base SIR model):**

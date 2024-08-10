@@ -1,6 +1,6 @@
 # Instructions for implementing the SIR model using Mesa
 
-## Exercuse: Making A Infection Spreading Model
+## Exercise: Making A Infection Spreading Model
 
 ### Setup
 1. Import necessary modules from Mesa:

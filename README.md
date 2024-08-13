@@ -1,6 +1,6 @@
 <div style="display: flex; align-items: center; justify-content: space-between;">
     <h1 style="margin: 0;">Summer School 2024 - Complex Adaptive Systems</h1>
-    <img src="./figures/applied_complexity.png" style="margin-left: 20px; width: 15%;" alt="Applied Complexity">
+    <img src="./figures/applied_complexity.png" style="margin-right: 70%; width: 35%;" alt="Applied Complexity">
 </div>
 
 You’ve reached the  landing page for the  RIVM Summer School

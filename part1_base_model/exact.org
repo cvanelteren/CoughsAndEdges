@@ -161,6 +161,17 @@ $t=0$ -- we will be only left with $I_0$.
 
 
 * Task implement the equations and simulate the SIR model
+Given the  explanation above, implement  the SIR model  as a
+ode. Make  use of  `scipy.integrate.solve_ivp` and  plot the
+evolution of the SIR model as a function of time. You should
+in the end have something like this
+
+[[file:./figures/base_model.png]]
+
+Things to try:
+- What happens when you double the infection rate?
+- What happens when you half the infection rate?
+
 #+begin_src jupyter-python
 import numpy as np, proplot as plt
 from scipy.integrate import solve_ivp
@@ -176,41 +187,46 @@ def step(t, x: np.ndarray,
     return np.asarray([ds, di, dr])
 #+end_src
 
-* Task implement the SIR model and create a phase portrait
-Simulate the  SIR dynamic under  different rates of  $\gamma$ and
-$\beta$.  Create a  heatmap  of the  recovered population  after
-$t=100$  time steps,  start  with an  initial population  of
-$S_0=100$ nd $I_0 = 1$.
-
+#+RESULTS:
 #+begin_src jupyter-python
 gamma = 0.5
 beta = 0.5
 x0 = np.array([2, 1, 0]).astype(float)
 x0 /= x0.sum()
 
-res = solve_ivp(update,
+res = solve_ivp(step,
         t_span = (0, 100),
         args = (beta, gamma),
         y0 = x0
 )
 
 labels = "S I R".split()
-plt.use_style("poster")
 fig, ax = plt.subplots()
 for label, y in zip(labels, res.y):
         ax.plot(y, label = label)
-ax.legend(ncols = 1)
+ax.legend(ncols = 1, frameon = True)
+ax.set_title(fr"$\beta = {beta}$, $\gamma = {gamma}$")
 ax.format(xlabel = "Time(t)",
-        # ylim = (0, 1)
         )
-plt.rc.reset()
+fig.savefig("./figures/base_model.png", dpi = 150)
 fig.show()
 #+end_src
 
 #+RESULTS:
+:RESULTS:
+: /tmp/ipykernel_904006/344853821.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+:   fig.show()
+#+attr_org: :width 288 :height 320
+[[./.ob-jupyter/0ff0f66e4d84c79385970a19d6f46853e207fb64.png]]
+:END:
 
+* Tasks
+** Task implement the SIR model and create a phase portrait
+Simulate the  SIR dynamic under  different rates of  $\gamma$ and
+$\beta$.  Create a  heatmap  of the  recovered population  after
+$t=100$  time steps,  start  with an  initial population  of
+$S_0=100$ nd $I_0 = 1$.
 
-Creating a phase portrait
 #+begin_src jupyter-python
 from tqdm import tqdm
 from itertools import product
@@ -220,13 +236,16 @@ betas = np.linspace(0, 1)
 result = np.zeros((gammas.size, betas.size))
 for idx, (gamma, beta) in tqdm(enumerate(product(gammas, betas))):
     x0 = np.array([100, 1, 0]).astype(float)
-    res = solve_ivp(update,
+    res = solve_ivp(step,
                     t_span = (0, 100),
                     args = (beta, gamma),
                     y0 = x0
                 )
     result.ravel()[idx] = res.y[-1].mean()
 #+end_src
+
+#+RESULTS:
+: 2500it [00:19, 127.37it/s]
 
 
 #+begin_src jupyter-python
@@ -242,7 +261,15 @@ ax.format(
     xlabel = r"Infection rate $(\beta)$",
     ylabel = r"Recovery rate $(\gamma)$",
 )
+fig.savefig("./figures/recovered.png")
 fig.show()
 
 #+end_src
 
+#+RESULTS:
+:RESULTS:
+: /tmp/ipykernel_904006/1833997108.py:14: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+:   fig.show()
+#+attr_org: :width 379 :height 308
+[[./.ob-jupyter/505b12285bb7f9953af8026a2b6d99554fb65adf.png]]
+:END:

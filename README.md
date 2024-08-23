@@ -35,8 +35,8 @@ session with you!
 -   Greeting: Welcome to the workshop! We’re excited to dive into the SIR model with edge dynamics together.
 -   Session Goals: Our aim is to build and analyze an SIR model enhanced with edge dynamics. Here’s how we’ll break down our time:
     -   Part 1: Implementing the SIR model [1 hour]
-    -   Part 2: Adding edge dynamics 
-    -   Part 3: Analyzing the model and discussing insights 
+    -   Part 2: Adding edge dynamics
+    -   Part 3: Analyzing the model and discussing insights
 -   Breaks: We’ll take two 15-minute breaks to keep our energy up and ensure we have ample time to reflect and discuss.
 
 ![timeline](./figures/flatten_curve.png)
@@ -102,7 +102,7 @@ during  the  COVID  pandemic was  social  distancing,  where
 agents limit the number of interactions as well as whom they
 interact with. In this  section, we will
 explore the effects  of dynamic agents on the  ability for a
-disease to spread. 
+disease to spread.
 
 - Introduction to Networks
  -  **Concept Explanation**:  We’ll  discuss  the basics  of
@@ -147,8 +147,10 @@ generation of epidemic models.  Keep pushing the boundaries,
 and enjoy the process of discovery.
 
 I leave you now with two profound quotes from the greate scientists of the past. See you in a future workshop!
-> All models are wrong, but some are useful. 
+
+> All models are wrong, but some are useful.
 >>George P.A. Box
+
 > With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.
 >> John von Neumann
 

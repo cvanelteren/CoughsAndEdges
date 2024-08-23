@@ -75,7 +75,7 @@ over time as
 
 Neat!
 
-** But wait what is $S(t), I(t), and R(t)$?
+** But wait what is $S(t), I(t)$, and $R(t)$?
 Now that  we have a  compact expression for the  dynamics of
 the different compartments, we still have to determined what
 these time  functions are. The systems  of equations express
@@ -101,8 +101,8 @@ which gives us
 \frac{dI(t)}{dS(t)} = \frac{\gamma}{\beta}\frac{1}{S(t)}
 \end{equation}
 
-The   ratio  $\frac{\gamma}{\beta}$   is  often   expressed  as   the
-*basic reproduction number* or $R_0 = \frac{\beta}{\gamma}$ which expresses
+The  ratio $\frac{\gamma}{\beta}$  is often  expressed as  the *basic
+reproduction number* or $R_0  = \frac{\beta}{\gamma}$ which expresses
 the rate of spreading a disease to its recovery rate.
 
 ** Why is this useful?
@@ -160,17 +160,20 @@ equation becomes  consistent when  plugging in the  value of
 $t=0$ -- we will be only left with $I_0$.
 
 
-* Task implement the equations and simulate the SIR model
-Given the  explanation above, implement  the SIR model  as a
-ode. Make  use of  `scipy.integrate.solve_ivp` and  plot the
+* !Task! implement the equations and simulate the SIR model
+Given the explanation  above, implement the SIR  model as an
+ODE. Make  use of  `scipy.integrate.solve_ivp` and  plot the
 evolution of the SIR model as a function of time. You should
 in the end have something like this
 
 [[file:./figures/base_model.png]]
 
 Things to try:
-- What happens when you double the infection rate?
-- What happens when you half the infection rate?
+- How  does the  reproduction number  influence the  number of
+infected people?
+ - What happens when you double the infection rate?
+ - What happens when you half the infection rate?
+
 
 #+begin_src jupyter-python
 import numpy as np, proplot as plt
@@ -191,8 +194,8 @@ def step(t, x: np.ndarray,
 #+begin_src jupyter-python
 gamma = 0.5
 beta = 0.5
-x0 = np.array([2, 1, 0]).astype(float)
-x0 /= x0.sum()
+x0 = np.array([100, 1, 0]).astype(float)
+# x0 /= x0.sum()
 
 res = solve_ivp(step,
         t_span = (0, 100),
@@ -208,24 +211,27 @@ ax.legend(ncols = 1, frameon = True)
 ax.set_title(fr"$\beta = {beta}$, $\gamma = {gamma}$")
 ax.format(xlabel = "Time(t)",
         )
-fig.savefig("./figures/base_model.png", dpi = 150)
+fig.savefig("./figures/base_model.png", dpi = 300)
 fig.show()
 #+end_src
 
 #+RESULTS:
 :RESULTS:
-: /tmp/ipykernel_904006/344853821.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+: /tmp/ipykernel_904006/3193026665.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
 :   fig.show()
-#+attr_org: :width 288 :height 320
-[[./.ob-jupyter/0ff0f66e4d84c79385970a19d6f46853e207fb64.png]]
+#+attr_org: :width 291 :height 320
+[[./.ob-jupyter/584d8ab702a5f4acc804ec7f53acdf05210c390b.png]]
 :END:
 
-* Tasks
-** Task implement the SIR model and create a phase portrait
+** !Task! implement the SIR model and create a phase portrait
 Simulate the  SIR dynamic under  different rates of  $\gamma$ and
 $\beta$.  Create a  heatmap  of the  recovered population  after
 $t=100$  time steps,  start  with an  initial population  of
 $S_0=100$ nd $I_0 = 1$.
+
+
+At the end you should have something like this
+[[file:./figures/recovered.png]]
 
 #+begin_src jupyter-python
 from tqdm import tqdm
@@ -266,10 +272,28 @@ fig.show()
 
 #+end_src
 
+
+#+begin_src jupyter-python
+f = lambda t, x0, beta, gamma:  x0 * np.exp(-beta / gamma * t)
+
+x0 = 0.9
+beta = 0.01
+gamma = 0.9
+t = np.arange(1000)
+
+y = f(t, x0, beta, gamma)
+fig, ax = plt.subplots()
+ax.plot(t, y)
+fig.show()
+
+
+
+#+end_src
+
 #+RESULTS:
 :RESULTS:
-: /tmp/ipykernel_904006/1833997108.py:14: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+: /tmp/ipykernel_904006/1421321470.py:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
 :   fig.show()
-#+attr_org: :width 379 :height 308
-[[./.ob-jupyter/505b12285bb7f9953af8026a2b6d99554fb65adf.png]]
+#+attr_org: :width 288 :height 282
+[[./.ob-jupyter/9660559d76606fdae5df8d65efab2b35fa8dbc06.png]]
 :END:

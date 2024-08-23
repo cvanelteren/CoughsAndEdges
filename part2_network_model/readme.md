@@ -38,7 +38,58 @@
    - Advance the scheduler by one step
    - Collect data
 
-5. **(Optional) Implement any helper methods you find useful**
+5. **Implement** a vaccination option**
+   - Vaccinated agents cannot be infected and behave like recovered individuals
+
+6. **(Optional) Implement any helper methods you find useful**
+
+# Exercises
+## Exercise 1: Simulating the SIR Model on Different Network Topologies
+
+    **Task**: Simulate the SIR model on different types of networks, including:
+        - A random network (Erdős-Rényi model)
+        - A small-world network (Watts-Strogatz model)
+        - A scale-free network (Barabási-Albert model)
+    **Objective**: Observe and compare how the topology of each network affects the spread of the disease. Focus on differences in the speed of the outbreak, the peak of infections, and the final epidemic size for each network type.
+    **Question**: How does the network structure influence the timing and extent of the outbreak?
+
+## Exercise 2: Varying Transmission and Recovery Rates
+
+    **Task**: In your SIR model simulation, systematically vary the transmission rate (ββ) and the recovery rate ($\gamma$).
+    **Objective**: Investigate how changes in these rates affect the dynamics of the disease, particularly:
+        The basic reproduction number $R_0$​
+        The peak number of infections
+        The duration of the epidemic
+    **Question**: How do different values of $\beta$ and $\gamma$ alter the course of the epidemic? What happens when $R_0$​ is greater than or less than 1?
+
+## Exercise 3: Exploring Different Initial Conditions
+
+    **Task**: Start the infection at different nodes within the network, such as:
+        - A highly connected node (hub)
+        - A node with a low degree (few connections)
+    **Objective**: Compare the outcomes to see how the initial placement of the infection affects the spread of the disease. Focus on the speed, peak, and final size of the epidemic.
+    Question: How does the location of the initial infection influence the dynamics of the outbreak?
+
+## Exercise 4: Analyzing the Impact of Network Size
+
+    **Task**: Run the SIR model on networks of different sizes while keeping other parameters (e.g., transmission rate, recovery rate) constant.
+    **Objective**: Observe how the size of the network influences the epidemic's progression. Pay attention to changes in the epidemic threshold, the peak of infections, and the total number of infected individuals.
+    **Question**: How does increasing or decreasing the size of the network affect the spread of the disease?
+
+## Exercise 5: Effect of Clustering and Network Density
+
+    **Task**: Modify the clustering coefficient (the extent to which a node's neighbors are also neighbors) or the overall density of the network (number of edges) in your SIR simulation.
+    **Objective**: Explore how changes in clustering or network density influence the spread of the disease. Investigate whether these factors lead to faster local outbreaks or alter the epidemic threshold.
+    **Question**: What role do clustering and network density play in the dynamics of the epidemic? How do they affect the speed and extent of the spread?
+
+## Exercise 6: Comparing Targeted vs. Random Vaccination Strategies
+
+    **Task**: Implement different vaccination strategies in your network:
+        Targeted vaccination of the most connected nodes (hubs)
+        Random vaccination of nodes
+    **Objective**: Compare the effectiveness of these strategies in preventing or reducing the outbreak. Measure the reduction in the number of infections and the impact on the epidemic threshold.
+    **Question**: Which vaccination strategy is more effective in controlling the spread of the disease? Why?
+
 
 **Remember**:
 - Use self.random to generate random numbers for probabilistic events

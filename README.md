@@ -145,7 +145,7 @@ deeper  insights and  perhaps  even contribute  to the  next
 generation of epidemic models.  Keep pushing the boundaries,
 and enjoy the process of discovery.
 
-I leave you now with two profound quotes from the greate scientists of the past. See you in a future workshop!
+I leave you now with two profound quotes from the great scientists of the past. See you in a future workshop!
 
 > All models are wrong, but some are useful.
 >>George P.A. Box

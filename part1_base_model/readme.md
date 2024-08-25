@@ -98,10 +98,12 @@ The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction 
 -   **Analytical Insight**: By separating variables and integrating, we can derive an analytical relationship between $I(t)$ and $S(t)$, providing a clear picture of how these two quantities evolve relative to each other during an epidemic.
 -   **Reduction of Complexity**: This step simplifies the problem by reducing it from a system of time-dependent differential equations to a single, more tractable equation.
 
-Equation <eq:first> can solved by integration
+Equation [eq:2](#eq:second) can solved by integration
 
+
+<a id="eq:second"></a>
 ```math
-\begin{equation} \label{eq:second}
+\begin{equation} 
 \begin{aligned}
 \int\frac{dI(t)}{dS(t)} dS(t) &= \int 1 - \frac{\gamma}{\beta}S(t)^{-1} dS(t)$
 I(t) &= \frac{\gamma}{\beta} \ln S(t) - S(t) + C
@@ -122,7 +124,7 @@ I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S
 \end{equation}
 ```
 
-and thus <eq:first> becomes
+and thus [eq](#eq:first) becomes
 
 ```math
 \begin{equation}

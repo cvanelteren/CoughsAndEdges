@@ -113,42 +113,9 @@ S(t) &= S_0 e^{-R_0(R(t) - R(0))}
 \end{equation}
 ```
 
+We now have an expression for the time evolution of $S$ in terms of $R$. So why go through all this trouble? The equation shows that the number of susceptibles can expontially descrease with $R_0$. If $R_0$ is above 1, we _exponentially_ fast lose susceptibles. 
 
-We now have an expression for the time evolution of $I$ in terms of $S$, however we have introduced another constant factor $C$. This constant, will depend on the initial conditions of our simulation. At time $t = 0$ our simulation will start with some initial value for the three populations. Plugging these values in gives us an expression for $C$.
-
-Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating [eq:2](#eq2) at $t=0$ will give
-
-```math
-\begin{equation}
-I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S(t)
-\frac{\gamma}{\beta} \ln S_0
-\end{equation}
-```
-
-and thus [eq:1](#eq1) becomes
-
-```math
-\begin{equation}
-I(t) = \frac{\gamma}{\beta}\big(\ln S(t) - \ln S_0 \big) - S(t) + I_0 + S_0
-\end{equation}
-```
-
-Let&rsquo;s plug in some conditions to see if this equation makes sense.
-
-
-<a id="orgaf4e937"></a>
-
-## The effect of $S(t)$ on $I(t)$
-
-Assume our susceptible population approaches zero, then we can see that we are only left with $I_0$ as the $S$-related term cancel. The negative sign before $S(t)$ indicates that our population is decreasing if our pool of potential infection targets decreases.
-
-
-<a id="org144bd12"></a>
-
-## The effect of $S_0$ on $I(t)$
-
-Some may have noticed that our population of infected, $I(t)$, depends on the initial number of susceptible individuals. The initial number of susceptible $S_0$, determines how many people can potentially be infected. The equation becomes consistent when plugging in the value of $t=0$ &#x2013; we will be only left with $I_0$.
-
+The exact solution to this system is a bit more involved and goes outside the scope of this tutorial session, but if interested I can point you to some interesting articles. The beauty of the SIR model is that it is so simple that the solution seems at reach, yet the math quickly gets more involved, and sometimes even impossible to solve. We will explore a potential solution to this problem in parts two and three of this tutorial session where we will implement the SIR model on a network (part 2) that potentially changes as a function of time (part 3).
 
 <a id="orgebed299"></a>
 

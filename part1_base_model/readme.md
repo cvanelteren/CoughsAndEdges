@@ -1,13 +1,9 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
-
-- [Table of Contents](#table-of-contents)
 - [How To Model a Disease?](#how-to-model-a-disease)
 - [Population dynamics](#population-dynamics)
     - [But wait what is $S(t), I(t)$, and $R(t)$?](#but-wait-what-is-st-it-and-rt)
     - [Why is this useful?](#why-is-this-useful)
-    - [The effect of $S(t)$ on $I(t)$](#the-effect-of-st-on-it)
-    - [The effect of $S_0$ on $I(t)$](#the-effect-of-s_0-on-it)
 - [:memo: Task: implement the equations and simulate the SIR model ](#memo-task-implement-the-equations-and-simulate-the-sir-model)
 - [:memo: Task: simulate the peak and width of the curve as a function of $R_0$  ](#memo-task-simulate-the-peak-and-width-of-the-curve-as-a-function-of-r_0)
 

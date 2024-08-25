@@ -31,7 +31,7 @@ Before we introduce complicated dynamics, it warrants to explore the dynamics of
 If we think about the three populations, we see that $S$ is only dependent on $I$, in turn $I$ depends on $S$ and $I$ itself. Lastly, $R$ is only determined by $I$. Let&rsquo;s first focus on $S$. The change of dynamics as a function of time (denoted by $\frac{d}{dt}S$) is determined by 1 thing and 1 thing only: the rate of infection of $I$ population. That is, the dynamics of the $S$ compartment depends on how often $S$s are in contact with $I$ and how well the disease *turns* $S$ into $I$. Or in other words we can write that the change of $S$ is described by
 
 ```math
-\frac{d}{dt} S = -\beta S(t) I(t).
+\frac{dS}{dt}  = -\beta S(t) I(t).
 ```
 
 The interaction $S(t)I(t)$ tells us that the dynamics of $S$ is proportional to the interactions of $S$s with $I$s. The negative sign indicates that our population can only shrink &#x2013; since we have no birth/death dynamics.
@@ -45,16 +45,16 @@ When we think of the dynamics of $I$, we can state that the change of the number
 Lastly, the dynamics of $R$ are only determined by the &ldquo;gain&rdquo; of $I\to R$, which is simply
 
 ```math
-\frac{d}{dt} R = \gamma I(t).
+\frac{dR}{dt}  = \gamma I(t).
 ```
 
 Taken together our system $\sigma = \{S, I, R\}$ is described over time as
 
 ```math
 \begin{aligned}
-\frac{d}{dt} S &= -\beta S(t) I(t) \\
-\frac{d}{dt} I &= \beta S(t) I(t) - \gamma I(t)\\
-\frac{d}{dt} R &= \gamma I(t)
+\frac{dS}{dt} &= -\beta S(t) I(t) \\
+\frac{dI}{dt} &= \beta S(t) I(t) - \gamma I(t)\\
+\frac{dR}{dt} &= \gamma I(t)
 \end{aligned}
 ```
 

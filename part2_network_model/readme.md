@@ -138,11 +138,12 @@ exploring epidemiological dynamics computationally.
   **Question**: What role do clustering and network density play in the dynamics of the epidemic? How do they affect the speed and extent of the spread?
 
 # :memo: Exercise 6: Comparing Targeted vs. Random Vaccination Strategies
-    **Task**: Implement different vaccination strategies in your network:
-        Targeted vaccination of the most connected nodes (hubs)
-        Random vaccination of nodes
-    **Objective**: Compare the effectiveness of these strategies in preventing or reducing the outbreak. Measure the reduction in the number of infections and the impact on the epidemic threshold.
-    **Question**: Which vaccination strategy is more effective in controlling the spread of the disease? Why?
+**Task**: Implement different vaccination strategies in your network:
+    - Targeted vaccination of the most connected nodes (hubs)
+    - Random vaccination of nodes
+**Objective**: Compare the effectiveness of these strategies in preventing or reducing the outbreak. Measure the reduction in the number of infections and the impact on the epidemic threshold.
+**Question**: Which vaccination strategy is more effective in controlling the spread of the disease? Why?
+
 **Remember**:
 - Use self.random to generate random numbers for probabilistic events
 - Use self.schedule to manage agents in the model

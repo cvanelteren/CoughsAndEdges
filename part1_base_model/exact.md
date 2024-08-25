@@ -153,8 +153,8 @@ Things to try:
 - What happens when you double the infection rate?
 - What happens when you half the infection rate?
 - What happens when..
- - The basic reproduction number is above 1?
- - The basic reproduction number is below 1?
+    - The basic reproduction number is above 1?
+    - The basic reproduction number is below 1?
 
 <a id="org98017b6"></a>
 

@@ -72,10 +72,10 @@ Neat!
 
 Now that we have a compact expression for the dynamics of the different compartments, we still have to determined what these time functions are. The systems of equations express the change of three different subpopulations over time, and are called coupled ordinary differential equations. They are coupled since there is a dependency between $S$ and $I$. Thus, to get a solution for the set of equation, we need to examine these two populations more closely. Implement the analytical SIR model.
 
-Instead of solving each equation with respect to $t$ &#x2013; which can be complicated &#x2013; we take advantage of the interdependence. We can see that the temporal dependence &ldquo;drops&rdquo; out by considering the rate of change for $I$ *relative* to $I$, that is we consider
+Instead of solving each equation with respect to $t$ &#x2013; which can be complicated &#x2013; we take advantage of the interdependence. We can see that the temporal dependence &ldquo;drops&rdquo; out by considering the rate of change for $I$ *relative* to $S$, that is we consider
 
 ```math
-\frac{\frac{d}{dt} I(t)}{\frac{d}{dt} S} = \frac{\beta S(t) I(t) - \gamma I(t)}{-\beta S(t) I(t)}$$
+\frac{\frac{d I(t)}{dt}}{\frac{dS(t)}{dt}} = \frac{\beta S(t) I(t) - \gamma I(t)}{-\beta S(t) I(t)}$$
 ```
 
 which gives us

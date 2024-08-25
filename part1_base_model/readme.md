@@ -80,7 +80,7 @@ Instead of solving each equation with respect to $t$ &#x2013; which can be compl
 
 which gives us
 
-<a id="eq:first"></a>
+<a id="eq1"></a>
 ```math
 \begin{equation} 
 \frac{dI(t)}{dS(t)} = \frac{\gamma}{\beta}\frac{1}{S(t)}
@@ -98,10 +98,10 @@ The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction 
 -   **Analytical Insight**: By separating variables and integrating, we can derive an analytical relationship between $I(t)$ and $S(t)$, providing a clear picture of how these two quantities evolve relative to each other during an epidemic.
 -   **Reduction of Complexity**: This step simplifies the problem by reducing it from a system of time-dependent differential equations to a single, more tractable equation.
 
-Equation [eq:1](#eq:first) can solved by integration
+Equation [eq:1](#eq1) can solved by integration
 
 
-<a id="eq:second"></a>
+<a id="eq2"></a>
 ```math
 \begin{equation} 
 \begin{aligned}
@@ -114,7 +114,7 @@ I(t) &= \frac{\gamma}{\beta} \ln S(t) - S(t) + C
 
 We now have an expression for the time evolution of $I$ in terms of $S$, however we have introduced another constant factor $C$. This constant, will depend on the initial conditions of our simulation. At time $t = 0$ our simulation will start with some initial value for the three populations. Plugging these values in gives us an expression for $C$.
 
-Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating <eq:second> at $t=0$ will give
+Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating [eq:2](#eq2) at $t=0$ will give
 
 ```math
 \begin{equation}
@@ -123,7 +123,7 @@ I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S
 \end{equation}
 ```
 
-and thus [eq:1](#eq:first) becomes
+and thus [eq:1](#eq1) becomes
 
 ```math
 \begin{equation}

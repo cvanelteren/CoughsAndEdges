@@ -5,7 +5,7 @@
   - [The effect of $S(t)$ on $I(t)$](#orgaf4e937)
   - [The effect of $S_0$ on $I(t)$](#org144bd12)
 - [Task :memo: implement the equations and simulate the SIR model](#orgebed299)
-  - [Task :memo: implement the SIR model and create a phase portrait](#org98017b6)
+- [Task :memo: implement the SIR model and create a phase portrait](#org98017b6)
 
 
 <a id="org69df47c"></a>
@@ -145,13 +145,9 @@ Things to try:
 -   What happens when you double the infection rate?
 -   What happens when you half the infection rate?
 
-![img](./.ob-jupyter/0ff0f66e4d84c79385970a19d6f46853e207fb64.png)
-
-
 <a id="org98017b6"></a>
 
 ## Task :memo: implement the SIR model and create a phase portrait
 
-Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of $ S_{0}=100 $ and $I_{0} = 1$.
+Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of with $S_0=100$ and $I_0 = 1$.
 
-![img](./.ob-jupyter/505b12285bb7f9953af8026a2b6d99554fb65adf.png)

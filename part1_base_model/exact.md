@@ -4,8 +4,8 @@
   - [Why is this useful?](#org5777e1c)
   - [The effect of $S(t)$ on $I(t)$](#orgaf4e937)
   - [The effect of $S_0$ on $I(t)$](#org144bd12)
-- [!Task! implement the equations and simulate the SIR model](#orgebed299)
-  - [!Task! implement the SIR model and create a phase portrait](#org98017b6)
+- [Task :memo: implement the equations and simulate the SIR model](#orgebed299)
+  - [Task :memo: implement the SIR model and create a phase portrait](#org98017b6)
 
 
 <a id="org69df47c"></a>
@@ -41,11 +41,13 @@ $$\frac{d}{dt} R = \gamma I(t).$$
 
 Taken together our system $\sigma = \{S, I, R\}$ is described over time as
 
+```math
 \begin{aligned}
 \frac{d}{dt} S &= -\beta S(t) I(t) \\
 \frac{d}{dt} I &= \beta S(t) I(t) - \gamma I(t)\\
 \frac{d}{dt} R &= \gamma I(t)
 \end{aligned}
+```
 
 Neat!
 
@@ -58,13 +60,17 @@ Now that we have a compact expression for the dynamics of the different compartm
 
 Instead of solving each equation with respect to $t$ &#x2013; which can be complicated &#x2013; we take advantage of the interdependence. We can see that the temporal dependence &ldquo;drops&rdquo; out by considering the rate of change for $I$ *relative* to $I$, that is we consider
 
-$$\frac{\frac{d}{dt} I(t)}{\frac{d}{dt} S} = \frac{\beta S(t) I(t) - \gamma I(t)}{-\beta S(t) I(t)}$$
+```math
+\frac{\frac{d}{dt} I(t)}{\frac{d}{dt} S} = \frac{\beta S(t) I(t) - \gamma I(t)}{-\beta S(t) I(t)}$$
+```
 
 which gives us
 
+```math
 \begin{equation} \label{eq:first}
 \frac{dI(t)}{dS(t)} = \frac{\gamma}{\beta}\frac{1}{S(t)}
 \end{equation}
+```
 
 The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction number** or $R_0 = \frac{\beta}{\gamma}$ which expresses the rate of spreading a disease to its recovery rate.
 
@@ -79,27 +85,35 @@ The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction 
 
 Equation <cref:eq:first> can solved by integration
 
+```math
 \begin{equation} \label{eq:second}
 \begin{aligned}
 \int\frac{dI(t)}{dS(t)} dS(t) &= \int 1 - \frac{\gamma}{\beta}S(t)^{-1} dS(t)$
 I(t) &= \frac{\gamma}{\beta} \ln S(t) - S(t) + C
 \end{aligned}
 \end{equation}
+```
+
 
 We now have an expression for the time evolution of $I$ in terms of $S$, however we have introduced another constant factor $C$. This constant, will depend on the initial conditions of our simulation. At time $t = 0$ our simulation will start with some initial value for the three populations. Plugging these values in gives us an expression for $C$.
 
-Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating <cref:eq:second> at $t=0$ will give
+Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating <eq:second> at $t=0$ will give
 
+<a id="eq:second"></a>
+```math
 \begin{equation}
 I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S(t)
 \frac{\gamma}{\beta} \ln S_0
 \end{equation}
+```
 
-and thus <cref:eq:first> becomes
+and thus <eq:first> becomes
 
+```math
 \begin{equation}
 I(t) = \frac{\gamma}{\beta}\big(\ln S(t) - \ln S_0 \big) - S(t) + I_0 + S_0
 \end{equation}
+```
 
 Let&rsquo;s plug in some conditions to see if this equation makes sense.
 
@@ -120,36 +134,24 @@ Some may have noticed that our population of infected, $I(t)$, depends on the in
 
 <a id="orgebed299"></a>
 
-# !Task! implement the equations and simulate the SIR model
-
+# Task :memo: implement the equations and simulate the SIR model 
 Given the explanation above, implement the SIR model as an ODE. Make use of \`scipy.integrate.solve\_ivp\` and plot the evolution of the SIR model as a function of time. You should in the end have something like this
 
 ![img](./figures/base_model.png)
 
 Things to try:
 
--   How does the reproduction number influence the number of
-
-infected people?
-
+-   How does the reproduction number influence the number of infected people?
 -   What happens when you double the infection rate?
 -   What happens when you half the infection rate?
-
-    /tmp/ipykernel_904006/344853821.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-      fig.show()
 
 ![img](./.ob-jupyter/0ff0f66e4d84c79385970a19d6f46853e207fb64.png)
 
 
 <a id="org98017b6"></a>
 
-## !Task! implement the SIR model and create a phase portrait
+## Task :memo: implement the SIR model and create a phase portrait
 
-Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of $S_0=100$ nd $I_0 = 1$.
-
-    2500it [00:19, 127.37it/s]
-
-    /tmp/ipykernel_904006/1833997108.py:14: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-      fig.show()
+Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of $ S_{0}=100 $ and $I_{0} = 1$.
 
 ![img](./.ob-jupyter/505b12285bb7f9953af8026a2b6d99554fb65adf.png)

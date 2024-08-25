@@ -143,7 +143,7 @@ Some may have noticed that our population of infected, $I(t)$, depends on the in
 
 <a id="orgebed299"></a>
 
-# :memo: Task implement the equations and simulate the SIR model 
+# :memo: Task: implement the equations and simulate the SIR model 
 Given the explanation above, implement the SIR model as an ODE. Make use of \`scipy.integrate.solve\_ivp\` and plot the evolution of the SIR model as a function of time. You should in the end have something like this
 
 ![img](./figures/base_model.png)
@@ -159,9 +159,9 @@ Things to try:
 
 <a id="org98017b6"></a>
 
-# :memo: Task implement the SIR model and create a phase portrait
+# :memo: Task: simulate the peak and width of the curve as a function of $R_0$  
 
-Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of where one person is infected. Under which parameter settings does the disease spread most readily?
+Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the peak and width of the infected population after $t=100$ time steps, start with an initial population of where one person is infected. Under which parameter settings does the disease spread most readily?
 
 
 

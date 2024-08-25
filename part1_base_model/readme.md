@@ -98,7 +98,7 @@ The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction 
 -   **Analytical Insight**: By separating variables and integrating, we can derive an analytical relationship between $I(t)$ and $S(t)$, providing a clear picture of how these two quantities evolve relative to each other during an epidemic.
 -   **Reduction of Complexity**: This step simplifies the problem by reducing it from a system of time-dependent differential equations to a single, more tractable equation.
 
-Equation [eq:2](#eq:second) can solved by integration
+Equation [eq:1](#eq:first) can solved by integration
 
 
 <a id="eq:second"></a>
@@ -116,7 +116,6 @@ We now have an expression for the time evolution of $I$ in terms of $S$, however
 
 Let $S(0) = S_0, I(0) = I_0, R(0) = R_0$ with $S_0, I_0, R_0 \in \mathbb{N}$, evaluating <eq:second> at $t=0$ will give
 
-<a id="eq:second"></a>
 ```math
 \begin{equation}
 I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S(t)
@@ -124,7 +123,7 @@ I_0 =  \frac{\gamma}{\beta} \ln  S_0 +  C \leftrightarrow  C =  I_0 -  S_0 + - S
 \end{equation}
 ```
 
-and thus [eq](#eq:first) becomes
+and thus [eq:1](#eq:first) becomes
 
 ```math
 \begin{equation}

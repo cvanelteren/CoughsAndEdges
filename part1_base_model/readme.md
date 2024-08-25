@@ -1,12 +1,17 @@
-# Table of Contents
-- [How To Model a Disease?](#org69df47c)
-- [Population dynamics](#orgee5a59b)
-  - [But wait what is $S(t), I(t)$, and $R(t)$?](#org473955d)
-  - [Why is this useful?](#org5777e1c)
-  - [The effect of $S(t)$ on $I(t)$](#orgaf4e937)
-  - [The effect of $S_0$ on $I(t)$](#org144bd12)
-- [:memo: Task implement the equations and simulate the SIR model](#orgebed299)
-- [:memo: Task implement the SIR model and create a phase portrait](#org98017b6)
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Table of Contents](#table-of-contents)
+- [How To Model a Disease?](#how-to-model-a-disease)
+- [Population dynamics](#population-dynamics)
+    - [But wait what is $S(t), I(t)$, and $R(t)$?](#but-wait-what-is-st-it-and-rt)
+    - [Why is this useful?](#why-is-this-useful)
+    - [The effect of $S(t)$ on $I(t)$](#the-effect-of-st-on-it)
+    - [The effect of $S_0$ on $I(t)$](#the-effect-of-s_0-on-it)
+- [:memo: Task: implement the equations and simulate the SIR model ](#memo-task-implement-the-equations-and-simulate-the-sir-model)
+- [:memo: Task: simulate the peak and width of the curve as a function of $R_0$  ](#memo-task-simulate-the-peak-and-width-of-the-curve-as-a-function-of-r_0)
+
+<!-- markdown-toc end -->
 
 
 <a id="org69df47c"></a>
@@ -75,8 +80,9 @@ Instead of solving each equation with respect to $t$ &#x2013; which can be compl
 
 which gives us
 
+<a id="eq:first"></a>
 ```math
-\begin{equation} \label{eq:first}
+\begin{equation} 
 \frac{dI(t)}{dS(t)} = \frac{\gamma}{\beta}\frac{1}{S(t)}
 \end{equation}
 ```
@@ -92,7 +98,7 @@ The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction 
 -   **Analytical Insight**: By separating variables and integrating, we can derive an analytical relationship between $I(t)$ and $S(t)$, providing a clear picture of how these two quantities evolve relative to each other during an epidemic.
 -   **Reduction of Complexity**: This step simplifies the problem by reducing it from a system of time-dependent differential equations to a single, more tractable equation.
 
-Equation <cref:eq:first> can solved by integration
+Equation <eq:first> can solved by integration
 
 ```math
 \begin{equation} \label{eq:second}

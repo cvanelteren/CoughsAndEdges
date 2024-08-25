@@ -1,3 +1,4 @@
+# Table of Contents
 - [How To Model a Disease?](#org69df47c)
 - [Population dynamics](#orgee5a59b)
   - [But wait what is $S(t), I(t)$, and $R(t)$?](#org473955d)
@@ -158,7 +159,9 @@ Things to try:
 
 <a id="org98017b6"></a>
 
-## :memo: Task implement the SIR model and create a phase portrait
+# :memo: Task implement the SIR model and create a phase portrait
 
-Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of with $S_0=100$ and $I_0 = 1$.
+Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of where one person is infected. Under which parameter settings does the disease spread most readily?
+
+
 

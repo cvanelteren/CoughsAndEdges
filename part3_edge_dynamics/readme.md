@@ -101,7 +101,7 @@ Create  a method  to visualize  the network,  coloring nodes
 based on their SIR state.  Implement an animation that shows
 how the network evolves over time as the disease spreads.
 
-# :memo: :smilingimp: Challenge Exercise
+# :memo: :smiling_imp: Challenge Exercise
 Design and  implement a  set of  agent behaviors  and global
 dynamics that effectively "flatten the curve" of infections.
 Compare the results to the base model without dynamic edges.

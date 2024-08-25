@@ -3,7 +3,6 @@
 
 - [Disease Dynamics in a Dynamic Network ](#disease-dynamics-in-a-dynamic-network)
 - [Setup](#setup)
-- [Tasks](#tasks)
 - [:memo: Exercise 1: Implementing SIREdgeAgent](#memo-exercise-1-implementing-siredgeagent)
 - [:memo: Exercise 2: Implementing SIREdgeModel](#memo-exercise-2-implementing-siredgemodel)
 - [:memo: Exercise 3: Edge Dynamics in SIREdgeModel](#memo-exercise-3-edge-dynamics-in-siredgemodel)
@@ -49,8 +48,7 @@ distancing  like pros?  Let's  dive  in and  see  if we  can
 outsmart this digital disease!
 
 # Setup
-
-1. **Import necessary modules (including your base SIR model):**
+**Import necessary modules (including your base SIR model):**
 ```python
    from mesa import Agent, Model
    from mesa.time import RandomActivation
@@ -59,8 +57,6 @@ outsmart this digital disease!
    import networkx as nx
    from base_model.sir import SIRAgent, SIRModel  # Assuming you've implemented this
 ```
-
-# Tasks
 
 # :memo: Exercise 1: Implementing SIREdgeAgent
 
@@ -105,7 +101,7 @@ Create  a method  to visualize  the network,  coloring nodes
 based on their SIR state.  Implement an animation that shows
 how the network evolves over time as the disease spreads.
 
-# :memo: Challenge Exercise:
+# :memo: :smilingimp: Challenge Exercise
 Design and  implement a  set of  agent behaviors  and global
 dynamics that effectively "flatten the curve" of infections.
 Compare the results to the base model without dynamic edges.

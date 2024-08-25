@@ -3,8 +3,6 @@
 
 - [Epidemics on a Network](#epidemics-on-a-network)
 - [What is Mesa?](#what-is-mesa)
-    - [-](#-)
-    - [Tasks](#tasks)
 - [:memo: Exercise 1: Simulating the SIR Model on Different Network Topologies](#memo-exercise-1-simulating-the-sir-model-on-different-network-topologies)
 - [:memo: Exercise 2: Varying Transmission and Recovery Rates](#memo-exercise-2-varying-transmission-and-recovery-rates)
 - [:memo: Exercise 3: Exploring Different Initial Conditions](#memo-exercise-3-exploring-different-initial-conditions)
@@ -40,8 +38,8 @@ extensible  structure for  creating  simulations of  complex
 systems, particularly  those involving  multiple interacting
 agents. Key features of Mesa include:
 
-Agent-based modeling: Allows creation of individual agents with unique behaviors.
-Space and network support: 
+Agent-based modeling:  Allows creation of  individual agents
+with unique behaviors. Space and network support:
 - Enables  modeling  of  agents  in  various  environments,
   including grids and networks.
 - Data  collection and analysis: Offers  tools for gathering

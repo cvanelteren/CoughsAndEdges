@@ -38,12 +38,13 @@ extensible  structure for  creating  simulations of  complex
 systems, particularly  those involving  multiple interacting
 agents. Key features of Mesa include:
 
-Agent-based modeling:  Allows creation of  individual agents
-with unique behaviors. Space and network support:
-- Enables  modeling  of  agents  in  various  environments,
-  including grids and networks.
+Agent-based modeling:  
+- Allows  creation of  individual agents  with unique
+behaviors.
+- Space and  network support: Enables modeling  of agents in
+  various environments, including grids and networks.
 - Data  collection and analysis: Offers  tools for gathering
-  and analyzing simulation data.
+    and analyzing simulation data.
 - Visualization:  Provides built-in options  for visualizing
   model dynamics.
 

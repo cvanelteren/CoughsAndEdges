@@ -107,8 +107,8 @@ Equation [eq:1](#eq1) can solved by integration
 \begin{aligned}
 \int\frac{dS(t)}{dR(t)} dS(t) &= -\frac{\beta}{\gamma} S(t) \leftrightarrow \frac{dS}{S(t)} = -\frac{\beta}{\gamma}\\
 \int_0^\tau \frac{d S(t)}{S(t)} &= \frac{\beta}{\gamma} dR(t)\\
-\ln S(t) - ln S(0) &= -R_0 (R(t) - R(0))\\
-S(t) &= S_0 \exp(-R_0(R(t) - R(0)))
+\ln S(t) - \ln S(0) &= -R_0 (R(t) - R(0))\\
+S(t) &= S_0 e^{-R_0(R(t) - R(0))}
 \end{aligned}
 \end{equation}
 ```

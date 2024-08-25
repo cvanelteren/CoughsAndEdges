@@ -4,8 +4,8 @@
   - [Why is this useful?](#org5777e1c)
   - [The effect of $S(t)$ on $I(t)$](#orgaf4e937)
   - [The effect of $S_0$ on $I(t)$](#org144bd12)
-- [Task :memo: implement the equations and simulate the SIR model](#orgebed299)
-- [Task :memo: implement the SIR model and create a phase portrait](#org98017b6)
+- [:memo: Task implement the equations and simulate the SIR model](#orgebed299)
+- [:memo: Task implement the SIR model and create a phase portrait](#org98017b6)
 
 
 <a id="org69df47c"></a>
@@ -14,7 +14,9 @@
 
 The SIR model is one of the simplest models to study the dynamics of a disease. In this model, the complex kinetics or particles are ignore. Instead, a disease is modeled by considering the rates between different stages. In particular, the SIR model consists of the transition between
 
-$$ Susceptible \to Infected \to Recovered$$
+```math
+Susceptible \to Infected \to Recovered
+```
 
 The population on this change is dependent on the rate of change that transforms, say, a susceptible individual to an infected individual. The model assumes that the transmission only depends on the contact rate between infected and susceptible. Recovered individuals are immune to the disease and cannot transmit the disease. The rate of change from a susceptible individual to an infected individual is dependent on three things: the rate of contact between susceptible and infected, the probability of an infected individual transmitting the disease to another individual, and the recovery rate of an individual. The rate of infection is often denoted as $\beta$, and the rate over recovery is often $\gamma$.
 
@@ -27,17 +29,23 @@ Before we introduce complicated dynamics, it warrants to explore the dynamics of
 
 If we think about the three populations, we see that $S$ is only dependent on $I$, in turn $I$ depends on $S$ and $I$ itself. Lastly, $R$ is only determined by $I$. Let&rsquo;s first focus on $S$. The change of dynamics as a function of time (denoted by $\frac{d}{dt}S$) is determined by 1 thing and 1 thing only: the rate of infection of $I$ population. That is, the dynamics of the $S$ compartment depends on how often $S$s are in contact with $I$ and how well the disease *turns* $S$ into $I$. Or in other words we can write that the change of $S$ is described by
 
-$$ \frac{d}{dt} S = -\beta S(t) I(t).$$
+```math
+\frac{d}{dt} S = -\beta S(t) I(t).
+```
 
 The interaction $S(t)I(t)$ tells us that the dynamics of $S$ is proportional to the interactions of $S$s with $I$s. The negative sign indicates that our population can only shrink &#x2013; since we have no birth/death dynamics.
 
 When we think of the dynamics of $I$, we can state that the change of the number of $I$s over time is determined by the &ldquo;gain&rdquo; or &ldquo;success&rdquo; of the infected people turning $S \to I$. This rate is the same (but opposite) of the loss of $S \to I$. Furthermore, the $I$ population &ldquo;shrinks&rdquo; when the infected individuals turn form $I \to R$. The rate of loss is determined by $\gamma$. Taken together we can write
 
-$$\frac{dI}{dt} = \beta S(t) I(t) - \gamma I(t).$$
+```math
+\frac{dI}{dt} = \beta S(t) I(t) - \gamma I(t).
+```
 
 Lastly, the dynamics of $R$ are only determined by the &ldquo;gain&rdquo; of $I\to R$, which is simply
 
-$$\frac{d}{dt} R = \gamma I(t).$$
+```math
+\frac{d}{dt} R = \gamma I(t).
+```
 
 Taken together our system $\sigma = \{S, I, R\}$ is described over time as
 
@@ -134,20 +142,23 @@ Some may have noticed that our population of infected, $I(t)$, depends on the in
 
 <a id="orgebed299"></a>
 
-# Task :memo: implement the equations and simulate the SIR model 
+# :memo: Task implement the equations and simulate the SIR model 
 Given the explanation above, implement the SIR model as an ODE. Make use of \`scipy.integrate.solve\_ivp\` and plot the evolution of the SIR model as a function of time. You should in the end have something like this
 
 ![img](./figures/base_model.png)
 
 Things to try:
 
--   How does the reproduction number influence the number of infected people?
--   What happens when you double the infection rate?
--   What happens when you half the infection rate?
+- How does the reproduction number influence the number of infected people?
+- What happens when you double the infection rate?
+- What happens when you half the infection rate?
+- What happens when..
+ - The basic reproduction number is above 1?
+ - The basic reproduction number is below 1?
 
 <a id="org98017b6"></a>
 
-## Task :memo: implement the SIR model and create a phase portrait
+## :memo: Task implement the SIR model and create a phase portrait
 
 Simulate the SIR dynamic under different rates of $\gamma$ and $\beta$. Create a heatmap of the recovered population after $t=100$ time steps, start with an initial population of with $S_0=100$ and $I_0 = 1$.
 

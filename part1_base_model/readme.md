@@ -72,10 +72,10 @@ Neat!
 
 Now that we have a compact expression for the dynamics of the different compartments, we still have to determined what these time functions are. The systems of equations express the change of three different subpopulations over time, and are called coupled ordinary differential equations. They are coupled since there is a dependency between $S$ and $I$. Thus, to get a solution for the set of equation, we need to examine these two populations more closely. Implement the analytical SIR model.
 
-Instead of solving each equation with respect to $t$ &#x2013; which can be complicated &#x2013; we take advantage of the interdependence. We can see that the temporal dependence &ldquo;drops&rdquo; out by considering the rate of change for $I$ *relative* to $S$, that is we consider
+Instead of solving each equation with respect to $t$ &#x2013; which can be complicated &#x2013; we take advantage of the interdependence. We can see that the temporal dependence &ldquo;drops&rdquo; out by considering the rate of change for $S$ *relative* to $R$, that is we consider
 
 ```math
-\frac{\frac{d I(t)}{dt}}{\frac{dS(t)}{dt}} = \frac{\beta S(t) I(t) - \gamma I(t)}{-\beta S(t) I(t)}$$
+\frac{\frac{d S(t)}{dt}}{\frac{dR(t)}{dt}} = \frac{-\beta S(t) I(t)}{\gamma I(t)}$$
 ```
 
 which gives us
@@ -83,11 +83,11 @@ which gives us
 <a id="eq1"></a>
 ```math
 \begin{equation} 
-\frac{dI(t)}{dS(t)} = \frac{\gamma}{\beta}\frac{1}{S(t)}
+\frac{dI(t)}{dS(t)} = \frac{-\beta}{\gamma}S(t)
 \end{equation}
 ```
 
-The ratio $\frac{\gamma}{\beta}$ is often expressed as the **basic reproduction number** or $R_0 = \frac{\beta}{\gamma}$ which expresses the rate of spreading a disease to its recovery rate.
+The ratio $\frac{\beta}{\gamma}$ is often expressed as the **basic reproduction number** or $R_0 = \frac{\beta}{\gamma}$ which expresses the rate of spreading a disease to its recovery rate.
 
 
 <a id="org5777e1c"></a>
@@ -105,8 +105,10 @@ Equation [eq:1](#eq1) can solved by integration
 ```math
 \begin{equation} 
 \begin{aligned}
-\int\frac{dI(t)}{dS(t)} dS(t) &= \int 1 - \frac{\gamma}{\beta}S(t)^{-1} dS(t)$
-I(t) &= \frac{\gamma}{\beta} \ln S(t) - S(t) + C
+\int\frac{dS(t)}{dR(t)} dS(t) &= -\frac{\beta}{\gamma} S(t) \leftrightarrow \frac{dS}{S(t)} = -\frac{\beta}{\gamma}\\
+\int_0^\tau \frac{d S(t)}{S(t)} &= \frac{\beta}{\gamma} dR(t)\\
+\ln S(t) - ln S(0) &= -R_0 (R(t) - R(0))\\
+S(t) &= S_0 \exp(-R_0(R(t) - R(0)))
 \end{aligned}
 \end{equation}
 ```

@@ -38,7 +38,7 @@ session with you!
     -  Part 3: Analyzing the model and discussing insights
 -  Breaks: We’ll take two 15-minute breaks to keep our energy up and ensure we have ample time to reflect and discuss.
 
-![timeline](./figures/flatten_curve.png)
+![timeline](./figures/timeline.png)
 
 Feel free to  ask questions at any point.  Let’s get started
 and  explore  the  dynamics  of  the  SIR  model  with  edge

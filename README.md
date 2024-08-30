@@ -21,6 +21,13 @@ Check out  the detailed schedule  below to see what  we have
 planned.  We  look  forward  to a  productive  and  engaging
 session with you!
 
+<div>
+    <a href ="https://docs.google.com/presentation/d/105oHB8pBeJqEsOVgIJFJEJ0KwE6yZN5ikO76RvkEvLo/edit?usp=sharing">
+    <img src ="https://img.shields.io/badge/-Slides-72a190logo=google&logoColor=white&logoWidth=30">
+    </a>
+</div>
+
+
 # Table of Contents
 
 1.  [Part 1: Exact Analysis of the SIR Model](#orga2515fe)
